@@ -58,7 +58,7 @@ def main():
         parents = numpy.array(list(map(int, input().split())))
     # call the function and output it's result
         print(compute_height(n,parents))
-        pass
+        #pass
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
@@ -66,5 +66,5 @@ def main():
 sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
-main()
+#main()
 # print(numpy.array([1,2,3]))
