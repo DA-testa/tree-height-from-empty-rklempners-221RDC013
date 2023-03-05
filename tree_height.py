@@ -38,14 +38,14 @@ def main():
     # account for github input inprecision
         try:
             with open('./test/' + file, mode = 'r', encoding = "utf8") as f:
-                n = int(f.readline())
+                file = int(f.readline())
                 nn = f.readline()
                 parents = numpy.array(nn.split()).astype(int)
         except FileNotFoundError:
             print("Wrong file")
             return
 
-        print(compute_height(n, parents))
+        #print(compute_height(n, parents))
 
     elif input_type == "I":            
     # input number of elements
