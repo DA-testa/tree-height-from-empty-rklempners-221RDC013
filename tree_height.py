@@ -45,7 +45,7 @@ def main():
             return
     # account for github input inprecision
         try:
-            with open('folder/' + file, 'r', encoding = 'utf-8') as f:
+            with open('test/' + file, 'r') as f:
                 n = int(f.readline())
                 parents = numpy.array(list(map(int, f.readline().split())))
         except FileNotFoundError:
