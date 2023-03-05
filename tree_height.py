@@ -7,29 +7,22 @@ import numpy
 
 def compute_height(n, parents):
     # Write this function
-    height = numpy.full(n, -1)
-
-    def what_is_the_height(node):
-        if height[node] != -1:
-            return height[node]
-        
-        parent = parents[node]
-        if parent == -1:
-            height[node] = 1
-
-        else:
-            if height[parent] == -1:
-                what_is_the_height(parent)
-            height[node] = height[parent] + 1   
-
-        return height[node]
-    
+    height = numpy.zeros(n, dtype = numpy.int32)
     max_height = 0
     
     # Your code here
     for i in range(n):
-        max_height = max(max_height, what_is_the_height(i))
-    
+        if height[i] != 0:
+            continue
+        heightone = 0
+        while i != -1:
+            if height[i] != 0:
+                heightone = height[i] + 1
+            else:
+                heightone += 1
+            i = parents[i]
+        height[i] = heightone
+        max_height = max(max_height, heightone)       
     return max_height
 
 
