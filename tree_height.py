@@ -33,13 +33,14 @@ def main():
     # let user input file name to use, don't allow file names with letter a
         file = input()
         if 'a' in file:
-            print("wrong file name")
+            #print("wrong file name")
             return
     # account for github input inprecision
         try:
-            with open('test/' + file, 'r', encoding = "utf8") as f:
+            with open('./test/' + file, mode = 'r', encoding = "utf8") as f:
                 n = int(f.readline())
-                parents = numpy.array(list(map(int, f.readline().split())))
+                nn = f.readline()
+                parents = numpy.array(nn.split()).astype(int)
         except FileNotFoundError:
             print("Wrong file")
             return
@@ -50,10 +51,12 @@ def main():
     # input number of elements
         n = int(input())
     # input values in one variable, separate with space, split these values in an array
-        parents = numpy.array(list(map(int, input().split())))
+        parents = list(map(int, input().split()))
     # call the function and output it's result
-        print(compute_height(n,parents))
+        #print(compute_height(n,parents))
         #pass
+    height = compute_height(n, parents)
+    print(height)
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
