@@ -7,7 +7,7 @@ import numpy
 
 def compute_height(n, parents):
     # Write this function
-    height = numpy.zeros(n)
+    height = numpy.full(n, -1)
 
     def what_is_the_height(node):
         if height[node] != 0:
