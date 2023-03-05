@@ -27,6 +27,8 @@ def compute_height(n, parents):
 
 def main():
     # implement input form keyboard and from files
+    n = 0
+    parents = []
     input_type = input()
     
     if input_type == "F":
@@ -38,7 +40,7 @@ def main():
     # account for github input inprecision
         try:
             with open('./test/' + file, mode = 'r', encoding = "utf8") as f:
-                file = int(f.readline())
+                n = int(f.readline())
                 nn = f.readline()
                 parents = numpy.array(nn.split()).astype(int)
         except FileNotFoundError:
