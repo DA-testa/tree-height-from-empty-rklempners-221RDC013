@@ -57,6 +57,9 @@ def main():
     # call the function and output it's result
         #print(compute_height(n,parents))
         #pass
+    else:
+        return
+        
     height = compute_height(n, parents)
     print(height)
 
