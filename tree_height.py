@@ -13,11 +13,14 @@ def compute_height(n, parents):
         if height[node] != -1:
             return height[node]
         
-        if parents[node] == -1:
+        parent = parents[node]
+        if parent == -1:
             height[node] = 1
 
         else:
-            height[node] = 1 + what_is_the_height(parents[node])    
+            if height[parent] == -1:
+                what_is_the_height(parent)
+            height[node] = height[parent] + 1   
 
         return height[node]
     
