@@ -7,7 +7,7 @@ import numpy
 
 def compute_height(n, parents):
     # Write this function
-    height = {}
+    height = numpy.zeros(n)
 
     def what_is_the_height(node):
         if node in height:
@@ -44,7 +44,7 @@ def main():
         try:
             with open(file, 'r') as f:
                 n = int(f.readline())
-                parents = list(map(int, f.readline().split()))
+                parents = numpy.array(list(map(int, f.readline().split())))
         except FileNotFoundError:
             print("Wrong file")
             return
@@ -55,7 +55,7 @@ def main():
     # input number of elements
         n = int(input())
     # input values in one variable, separate with space, split these values in an array
-        parents = list(map(int, input().split()))
+        parents = numpy.array(list(map(int, input().split())))
     # call the function and output it's result
         print(compute_height(n,parents))
         pass
