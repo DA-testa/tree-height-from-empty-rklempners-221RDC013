@@ -10,7 +10,7 @@ def compute_height(n, parents):
     height = numpy.zeros(n)
 
     def what_is_the_height(node):
-        if node in height:
+        if height[node] != 0:
             return height[node]
         
         if parents[node] == -1:
@@ -38,11 +38,11 @@ def main():
     # let user input file name to use, don't allow file names with letter a
         file = input()
         if 'a' in file:
-            print("wrong file")
+            print("wrong file name")
             return
     # account for github input inprecision
         try:
-            with open(file, 'r') as f:
+            with open('folder/' + file, 'r') as f:
                 n = int(f.readline())
                 parents = numpy.array(list(map(int, f.readline().split())))
         except FileNotFoundError:
