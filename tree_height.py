@@ -7,25 +7,40 @@ import numpy
 
 def compute_height(n, parents):
     # Write this function
-    height = numpy.zeros(n, dtype = numpy.int32)
-    max_height = 0
-    
-    # Your code here
+    #height = numpy.zeros(n, dtype = numpy.int32)
+    #max_height = 0
+    children = {}
     for i in range(n):
-        starting_height = 0
-        current_node = i
-        while current_node != -1:
-            if height[current_node] != 0:
-                starting_height = starting_height + height[current_node]
-                break
-            else:
-                starting_height = starting_height + 1
-            current_node = parents[current_node]
-            if current_node == -1:
-                starting_height = 1
-            height[i] = starting_height
-        max_height = max(max_height, starting_height)
-    return max_height
+        children[i] = []
+    for i in range(n):
+        if parents[i] != -1:
+            children[parents[i]].append(i)
+    
+    depths = [-1] * n
+    stack = [(i, 1) for i in range(n) if parents[i] == -1]
+    while stack:
+        node, depth = stack.pop()
+        depths[node] = depth
+        for child in children[node]:
+            stack.append((child, depth + 1))
+
+    return max(depths)    
+    # Your code here
+    #for i in range(n):
+        #starting_height = 0
+        #current_node = i
+        #while current_node != -1:
+            #if height[current_node] != 0:
+                #starting_height = starting_height + height[current_node]
+                #break
+            #else:
+                #starting_height = starting_height + 1
+            #current_node = parents[current_node]
+            #if current_node == -1:
+                #starting_height = 1
+            #height[i] = starting_height
+        #max_height = max(max_height, starting_height)
+    #return max_height
 
 
 def main():
