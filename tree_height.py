@@ -50,8 +50,8 @@ def main():
     if input_type == "F":
     # let user input file name to use, don't allow file names with letter a
         file = input()
-        if 'a' in file:
-            #print("wrong file name")
+        if "a" in file:
+            print("wrong file name")
             return
     # account for github input inprecision
         #try:
