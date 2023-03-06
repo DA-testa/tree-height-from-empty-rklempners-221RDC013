@@ -45,11 +45,9 @@ def compute_height(n, parents):
 
 def main():
     # implement input form keyboard and from files
-    n = 0
-    parents = []
     input_type = input()
     
-    if input_type.lower() == "F":
+    if input_type == "F":
     # let user input file name to use, don't allow file names with letter a
         file = input()
         if 'a' in file:
@@ -69,7 +67,7 @@ def main():
 
         #print(compute_height(n, parents))
 
-    elif input_type.lower() == "I":            
+    elif input_type == "I":            
     # input number of elements
         n = int(input())
     # input values in one variable, separate with space, split these values in an array
@@ -80,7 +78,7 @@ def main():
         #print(compute_height(n,parents))
         #pass
     else:
-        exit()
+        print("Nepareiza atbilde")
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
