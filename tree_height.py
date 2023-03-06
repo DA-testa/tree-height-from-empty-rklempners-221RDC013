@@ -77,7 +77,7 @@ def main():
         #print(compute_height(n,parents))
         #pass
     else:
-        print("Nepareiza atbilde")
+        print("Nepareiza")
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
