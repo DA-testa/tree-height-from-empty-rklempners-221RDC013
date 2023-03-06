@@ -12,17 +12,19 @@ def compute_height(n, parents):
     
     # Your code here
     for i in range(n):
-        startingheight = 0
-        j = i
-        while j != -1:
-            if height[j] !=0:
-                startingheight = startingheight + height[j]
+        starting_height = 0
+        current_node = i
+        while current_node != -1:
+            if height[current_node] != 0:
+                starting_height = starting_height + height[current_node]
                 break
             else:
-                startingheight = startingheight + 1
-            j = parents[j]
-            height[i] = startingheight
-        max_height = max(max_height, startingheight)
+                starting_height = starting_height + 1
+            current_node = parents[current_node]
+            if current_node == -1:
+                starting_height = 1
+            height[i] = starting_height
+        max_height = max(max_height, starting_height)
     return max_height
 
 
