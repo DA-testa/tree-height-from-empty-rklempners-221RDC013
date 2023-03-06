@@ -55,10 +55,9 @@ def main():
             return
     # account for github input inprecision
         try:
-            with open('./test/' + file, mode = 'r', encoding = "utf8") as f:
+            with open("test/" + file, mode = 'r', encoding = "utf8") as f:
                 n = int(f.readline())
-                nn = f.readline()
-                parents = numpy.array(nn.split()).astype(int)
+                parents = list(map(int, f.readline().split()))
                 height = compute_height(n, parents)
                 print(height)
         except FileNotFoundError:
