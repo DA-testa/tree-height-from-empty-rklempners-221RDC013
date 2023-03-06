@@ -40,7 +40,7 @@ def main():
             return
     # account for github input inprecision
         try:
-            with open('./test/' + file, mode = 'r', encoding = "utf8") as f:
+            with open(file, mode = 'r', encoding = "utf8") as f:
                 n = int(f.readline())
                 nn = f.readline()
                 parents = numpy.array(nn.split()).astype(int)
