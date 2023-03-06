@@ -57,8 +57,8 @@ def main():
         #try:
         #else:
         with open("test/" + file, mode = 'r', encoding = "utf8") as f:
-            n = int(f.readline())
-            parents = list(map(int, f.readline().split()))
+            n = int(f.readline().strip())
+            parents = list(map(int, f.readline().split().strip()))
             height = compute_height(n, parents)
             print(height)
         #except FileNotFoundError:
