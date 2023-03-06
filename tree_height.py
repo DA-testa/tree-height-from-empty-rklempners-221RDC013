@@ -54,15 +54,15 @@ def main():
             #print("wrong file name")
             return
     # account for github input inprecision
-        try:
+        #try:
+        else:
             with open("test/" + file, mode = 'r', encoding = "utf8") as f:
                 n = int(f.readline())
                 parents = list(map(int, f.readline().split()))
                 height = compute_height(n, parents)
                 print(height)
-        except FileNotFoundError:
-            print("Wrong file")
-            return
+        #except FileNotFoundError:
+            #print("Wrong file")
 
         #print(compute_height(n, parents))
 
