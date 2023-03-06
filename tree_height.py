@@ -49,7 +49,7 @@ def main():
     parents = []
     input_type = input()
     
-    if input_type.lower() == "f":
+    if input_type.lower() == "F":
     # let user input file name to use, don't allow file names with letter a
         file = input()
         if 'a' in file:
@@ -69,7 +69,7 @@ def main():
 
         #print(compute_height(n, parents))
 
-    elif input_type.lower() == "i":            
+    elif input_type.lower() == "I":            
     # input number of elements
         n = int(input())
     # input values in one variable, separate with space, split these values in an array
