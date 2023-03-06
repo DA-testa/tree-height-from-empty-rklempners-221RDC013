@@ -21,7 +21,7 @@ def compute_height(n, parents):
                 startingheight = startingheight + 1
             i = parents[i]
             height[i] = startingheight
-            max_height = max(max_height, startingheight)
+        max_height = max(max_height, startingheight)
     return max_height
 
 
