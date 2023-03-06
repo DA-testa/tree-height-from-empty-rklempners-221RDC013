@@ -48,21 +48,19 @@ def main():
     input_type = input()
     
     if input_type == "F":
-    # let user input file name to use, don't allow file names with letter a
-        file = input()
-        #if "a" in file:
-            #print("wrong file name")
-            #return
-    # account for github input inprecision
-        #try:
-        #else:
-        with open("test/" + file, mode = 'r', encoding = "utf8") as f:
-            n = int(f.readline().strip())
-            parents = list(map(int, f.readline().split().strip()))
-            height = compute_height(n, parents)
-            print(height)
-        #except FileNotFoundError:
-            #print("Wrong file")
+        file = "test/" + input()
+        if 'a' in file:
+            return
+        try:
+            with open(file) as f:
+                n = int(f.readline())
+                parents = list(map(int, f.readline().split()))
+                height = compute_height(n, parents)
+                print(height)
+                    #break
+        except FileNotFoundError:
+            print("Wrong file")
+            return
 
         #print(compute_height(n, parents))
 
