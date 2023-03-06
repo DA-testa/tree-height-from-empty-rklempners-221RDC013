@@ -50,17 +50,17 @@ def main():
     if input_type == "F":
     # let user input file name to use, don't allow file names with letter a
         file = input()
-        if "a" in file:
-            print("wrong file name")
-            return
+        #if "a" in file:
+            #print("wrong file name")
+            #return
     # account for github input inprecision
         #try:
-        else:
-            with open("test/" + file, mode = 'r', encoding = "utf8") as f:
-                n = int(f.readline())
-                parents = list(map(int, f.readline().split()))
-                height = compute_height(n, parents)
-                print(height)
+        #else:
+        with open("test/" + file, mode = 'r', encoding = "utf8") as f:
+            n = int(f.readline())
+            parents = list(map(int, f.readline().split()))
+            height = compute_height(n, parents)
+            print(height)
         #except FileNotFoundError:
             #print("Wrong file")
 
@@ -76,8 +76,8 @@ def main():
         print(height)
         #print(compute_height(n,parents))
         #pass
-    else:
-        print("Nepareiza")
+    #else:
+        #print("Nepareiza")
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
